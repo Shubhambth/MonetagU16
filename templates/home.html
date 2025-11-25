@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self Earning Website</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Smooth animated gradient background */
+    .animate-gradient {
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 animate-gradient min-h-screen flex flex-col items-center justify-center text-white px-4">
+
+  <!-- Hero Section -->
+  <section class="w-full max-w-7xl flex flex-col-reverse md:flex-row items-center gap-12 py-10">
+
+    <!-- Text Content -->
+    <div class="flex-1 text-center md:text-left">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+        Unlock <span class="text-yellow-300">Passive Income</span><br class="hidden sm:block"> with Smart Automation
+      </h1>
+      <p class="text-lg text-white/90 mb-6 max-w-lg mx-auto md:mx-0">
+        Create AI-driven income streams that work while you rest. No coding. No stress. Just pure automated earnings.
+      </p>
+      <a href="#start" class="inline-block bg-yellow-400 text-gray-900 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-yellow-300 transition">
+        🚀 Get Started Free
+      </a>
+
+      <!-- Countdown Timer -->
+      <div class="mt-8 text-white/90 text-base font-medium">
+        ⏳ Page will refresh in <span id="timer" class="text-yellow-300 font-bold">35</span> seconds
+      </div>
+    </div>
+
+    <!-- Illustration / Image -->
+    <div class="flex-1 relative">
+      <div class="absolute -top-10 -left-10 w-32 h-32 bg-pink-400 rounded-full opacity-30 blur-2xl animate-pulse"></div>
+      <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full opacity-20 blur-3xl animate-pulse"></div>
+      <img src="https://via.placeholder.com/500x400?text=Smart+Earnings" alt="Hero Illustration" class="w-full max-w-md mx-auto relative z-10 rounded-xl shadow-2xl" />
+    </div>
+
+  </section>
+
+  <!-- Ads scripts -->
+  
+
+  <!-- Auto Refresh Script -->
+  <script>
+    let timeLeft = 35; // seconds
+    const timerDisplay = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      timerDisplay.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        location.reload(); // refresh page
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
